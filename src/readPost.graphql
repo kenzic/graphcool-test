@@ -1,0 +1,10 @@
+query UserCanAccessPost($user_id: ID!, $node_id: ID!){
+  SomePostExists(
+    filter: {
+      AND: [
+        {id: $node_id},
+        { author: { id: $user_id }}
+      ]
+    }
+  )
+}
